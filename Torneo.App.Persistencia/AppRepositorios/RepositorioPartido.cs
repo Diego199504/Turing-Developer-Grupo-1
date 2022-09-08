@@ -17,8 +17,7 @@ namespace Torneo.App.Persistencia
         }
         public IEnumerable<Partido> GetAllPartidos()
         {
-            return partidos;
-            //return _dataContext.Equipos;
+           return _dataContext.Partidos;
         }
     }
 }
