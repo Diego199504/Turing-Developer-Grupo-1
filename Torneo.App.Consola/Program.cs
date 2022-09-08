@@ -57,6 +57,10 @@ namespace Torneo.App.Consola
                     case 9:
                         GetAllPosicion();
                         break;
+                    case 10:
+                        GetAllPartidos();
+                        break;
+                            
                 }
             }
             while (Opcion != 0);
@@ -170,6 +174,14 @@ namespace Torneo.App.Consola
             {
 
                 Console.WriteLine(" ID Posicion: " + posicion.Id + " " + "Nombre:" + posicion.Nombre);
+            }
+        }
+
+        private static void GetAllPartidos()
+        {
+            foreach(var partido in _repoPartido.GetAllPartidos())
+            {
+                Console.WriteLine("ID Partido: " + partido.Id + " " +"Fecha del Partido :" + partido.FechaHora + " " + "Equipo Local :" + partido.Local + " " +  "Marcador Local : " + partido.MarcadorEquipoLocal + " " + "Equipo Visitante : " + " " + partido.Visitante + " " + "Marcador Visitante : " + partido.MarcadorEquipoVisitante);
             }
         }
     }
