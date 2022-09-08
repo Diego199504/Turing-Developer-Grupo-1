@@ -4,6 +4,6 @@ namespace Torneo.App.Persistencia
     public interface IRepositorioDirectorTecnico
     {
         public DirectorTecnico AddDirectorTecnico(DirectorTecnico directorTecnico);
-       
+       public IEnumerable<DirectorTecnico> GetAllDirectoresTecnicos();
     }
 }
