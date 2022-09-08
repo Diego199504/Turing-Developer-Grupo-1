@@ -74,9 +74,9 @@ namespace Torneo.App.Consola
             Console.WriteLine("Ingrese nombre del DT");
             string nombre = Console.ReadLine();
             Console.WriteLine("Ingrese numero de Documento del DT");
-            string documento = (Console.ReadLine());
+            int  documento = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Ingrese numero de Telefono");
-            string telefono = (Console.ReadLine());
+            int telefono = Convert.ToInt32(Console.ReadLine());
             var directorTecnico = new DirectorTecnico
             {
                 Nombre = nombre,
