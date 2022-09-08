@@ -181,7 +181,7 @@ namespace Torneo.App.Consola
         {
             foreach(var partido in _repoPartido.GetAllPartidos())
             {
-                Console.WriteLine("ID Partido: " + partido.Id + " " +"Fecha del Partido :" + partido.FechaHora + " " + "Equipo Local :" + partido.Local + " " +  "Marcador Local : " + partido.MarcadorEquipoLocal + " " + "Equipo Visitante : " + " " + partido.Visitante + " " + "Marcador Visitante : " + partido.MarcadorEquipoVisitante);
+                Console.WriteLine("ID Partido: " + partido.Id + " " +"Fecha del Partido :" + partido.FechaHora + " " + "Equipo Local :" + partido.Equipo.Nombre + " " +  "Marcador Local : " + partido.MarcadorEquipoLocal + " " + "Equipo Visitante : " + " " + partido.Equipo.Nombre + " " + "Marcador Visitante : " + partido.MarcadorEquipoVisitante);
             }
         }
     }
