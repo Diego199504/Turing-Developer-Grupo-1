@@ -7,13 +7,13 @@ namespace Torneo.App.Persistencia
         private readonly DataContext _dataContext = new DataContext();
         public Posicion AddPosicion(Posicion posicion)
         {
-            var posicionInsertada = _dataContext.Posiciones.Add(posicion);
+            var posicionInsertada = _dataContext.Posicion.Add(posicion);
             _dataContext.SaveChanges();
             return posicionInsertada.Entity;
         }
         public IEnumerable<Posicion> GetAllPosicion()
         {
-            return _dataContext.Posiciones;
+            return _dataContext.Posicion;
         }
     }
 }

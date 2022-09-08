@@ -8,7 +8,7 @@ namespace Torneo.App.Persistencia
         public Equipo AddEquipo(Equipo equipo, int idMunicipio, int idDT)
         {
             var municipioEncontrado = _dataContext.Municipios.Find(idMunicipio);
-            var DTEncontrado = _dataContext.DirectoresTecnicos.Find(idDT);
+            var DTEncontrado = _dataContext.Tecnicos.Find(idDT);
             equipo.Municipio = municipioEncontrado;
             equipo.DirectorTecnico = DTEncontrado;
             var equipoInsertado = _dataContext.Equipos.Add(equipo);

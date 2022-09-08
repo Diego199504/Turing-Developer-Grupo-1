@@ -14,7 +14,7 @@ namespace Torneo.App.Persistencia
         }
         public IEnumerable<DirectorTecnico> GetAllDirectoresTecnicos()
         {
-            return _dataContext.DirectoresTecnicos;
+            return _dataContext.Tecnicos;
         }
 
     }
