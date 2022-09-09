@@ -19,7 +19,7 @@ namespace Torneo.App.Consola
             {
                 Console.WriteLine("1. Insertar Municipio");
                 Console.WriteLine("2. Insertar Director Tecnico");
-                Console.WriteLine("3. Insertar Director Equipo");
+                Console.WriteLine("3. Insertar Equipo");
                 Console.WriteLine("4. Insertar Posicion");
                 Console.WriteLine("5. Insertar Partido");
                 Console.WriteLine("6. Insertar Jugador");
@@ -122,7 +122,7 @@ namespace Torneo.App.Consola
         }
         private static void AddPosicion()
         {
-            Console.WriteLine("Ingrese la posición del Jugador");
+            Console.WriteLine("Ingrese una posición");
             string nombre = Console.ReadLine();
             var posicion = new Posicion
             {
@@ -210,7 +210,7 @@ namespace Torneo.App.Consola
         {
             foreach(var partido in _repoPartido.GetAllPartidos())
             {
-                Console.WriteLine("ID Partido: " + partido.Id + " " +"Fecha del Partido :" + partido.FechaHora + " " + "Equipo Local :" + partido.Equipo.Nombre + " " +  "Marcador Local : " + partido.MarcadorEquipoLocal + " " + "Equipo Visitante : " + " " + partido.Equipo.Nombre + " " + "Marcador Visitante : " + partido.MarcadorEquipoVisitante);
+                Console.WriteLine("ID Partido: " + partido.Id + " " +"Fecha del Partido :" + partido.FechaHora + " " + "Equipo Local :" + partido.Local.Nombre + " " +  "Marcador Local : " + partido.MarcadorEquipoLocal + " " + "Equipo Visitante : " + " " + partido.Visitante.Nombre + " " + "Marcador Visitante : " + partido.MarcadorEquipoVisitante);
             }
         }
          private static void GetAllJugadores()

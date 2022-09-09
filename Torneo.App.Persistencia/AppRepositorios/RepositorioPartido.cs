@@ -11,6 +11,7 @@ namespace Torneo.App.Persistencia
             var equipoEncontradoVisitante = _dataContext.Equipos.Find(idEquiposVisitante);
             partido.Local = equipoEncontradoLocal;
             partido.Visitante = equipoEncontradoVisitante;
+            //partido.Visitante = equipoEncontradoVisitante;
             var partidoInsertado = _dataContext.Partidos.Add(partido);
             _dataContext.SaveChanges();
             return partidoInsertado.Entity;
@@ -18,7 +19,9 @@ namespace Torneo.App.Persistencia
         public IEnumerable<Partido> GetAllPartidos()
         {
            var partidos = _dataContext.Partidos
-                .Include(e => e.Equipo)
+                .Include(p => p.Local)
+                .Include(p => p.Visitante)
+               // .Include(p => p.Equipo.idEquiposVisitante)
                 .ToList();
 
             return partidos;
