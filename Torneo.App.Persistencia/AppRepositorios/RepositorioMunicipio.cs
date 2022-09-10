@@ -19,7 +19,7 @@ namespace Torneo.App.Persistencia
         public Municipio GetMunicipio(int idMunicipio)
 
         {
-            var municipioEncontrado = _dataContext.Municipio.Find(idMunicipio);
+            var municipioEncontrado = _dataContext.Municipios.Find(idMunicipio);
             return municipioEncontrado;
         }
 

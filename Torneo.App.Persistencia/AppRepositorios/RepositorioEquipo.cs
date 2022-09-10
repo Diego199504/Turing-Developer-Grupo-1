@@ -25,14 +25,14 @@ namespace Torneo.App.Persistencia
             return equipos;
             //return _dataContext.Equipos;
         }
-         public RepositorioEquipo GetEquipo(int idEquipo)
+         public Equipo GetEquipo(int idEquipo)
          {
             var equipoEncontrado = _dataContext.Equipos
-                .Where(e => equipoEncontrado.Id == idEquipo)
+                .Where(e => e.Id == idEquipo)
                 .Include(e => e.Municipio)
                 .Include(e => e.DirectorTecnico)
                 .FirstOrDefault();
-            return equipoEncontrado;     
+            return equipoEncontrado;    
 
          }
     }

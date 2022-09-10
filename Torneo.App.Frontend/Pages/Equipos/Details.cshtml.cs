@@ -8,7 +8,7 @@ namespace Torneo.App.Frontend.Pages.Equipos
     public class DetailsModel : PageModel
     {
         private readonly IRepositorioEquipo _repoEquipo;
-        public Equipos Equipo { get; set;}
+        public Equipo Equipo { get; set;}
         public DetailsModel(IRepositorioEquipo repoEquipo)
         {
             _repoEquipo = repoEquipo;
@@ -16,14 +16,14 @@ namespace Torneo.App.Frontend.Pages.Equipos
         }
          public IActionResult OnGet(int id)
         { 
-            equipo = _repoEquipo.GetEquipo(id);
-            if (equipo == null)
+            Equipo = _repoEquipo.GetEquipo(id);
+            if (Equipo == null)
             {
                 return NotFound();
             }
             else
             {
-                return Pages();
+                return Page();
 
             }
         

@@ -16,6 +16,11 @@ namespace Torneo.App.Persistencia
         {
             return _dataContext.Tecnicos;
         }
+        public DirectorTecnico GetDirectorTecnico(int idDirectorTecnico)
 
+        {
+            var directorTecnicoEncontrado = _dataContext.Tecnicos.Find(idDirectorTecnico);
+            return directorTecnicoEncontrado;
+        }
     }
 }
