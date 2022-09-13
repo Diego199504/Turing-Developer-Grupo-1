@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Torneo.App.Persistencia;
 using Torneo.App.Dominio;
 
-namespace Torneo.App.Frontend.Pages.Jugadores
+namespace Torneo.App.Frontend.Pages.Jugador
 {
     public class IndexModel : PageModel
     {
