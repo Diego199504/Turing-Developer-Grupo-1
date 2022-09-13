@@ -16,14 +16,12 @@
     </tr>
   </thead>
   <tbody>
-      @foreach (var Partido in Model.partido )
+      @foreach (var Partido in Model.Partido )
       {
         <tr>
-            <th scope="row">@partido.Id</th>
-            <td>@partido.Nombre</td>
-            <td>@partido.Municipio.Nombre</td>
+            <th scope="row">@Partido.Id</th>
             <td>
-                <a class="btn btn-primary" asp-page="./Details" asp-route-id="@partido.Id">
+                <a class="btn btn-primary" asp-page="./Details" asp-route-id="@Partido.Id">
                 Detalle
                 </a>
             </td> 
