@@ -16,7 +16,7 @@ namespace Torneo.App.Persistencia
             _dataContext.SaveChanges();
             return partidoInsertado.Entity;
         }
-        public IEnumerable<Partido> GetAllPartidos()
+        public Municipio GetPartido(int idPartido)
         {
            var partidos = _dataContext.Partidos
                 .Include(p => p.Local)
