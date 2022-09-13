@@ -13,5 +13,21 @@ namespace Torneo.App.Frontend.Pages.Dts
         {
             _repoDirectorTecnico = repoDirectorTecnico;
         }
+
+        public IActionResult OnGet(int id)
+        { 
+            DirectorTecnico = _repoDirectorTecnico.GetDirectorTecnico(id);
+            if (DirectorTecnico == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Page();
+
+            }
+        }
+
     }
+
 }
