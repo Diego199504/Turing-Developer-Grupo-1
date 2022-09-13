@@ -7,6 +7,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddSingleton<IRepositorioMunicipio, RepositorioMunicipio>();
 builder.Services.AddSingleton<IRepositorioDirectorTecnico, RepositorioDirectorTecnico>();
 builder.Services.AddSingleton<IRepositorioEquipo, RepositorioEquipo>();
+builder.Services.AddSingleton<IRepositorioJugador, RepositorioJugador>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
