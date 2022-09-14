@@ -10,9 +10,9 @@ namespace Torneo.App.Frontend.Pages.Posiciones
     {
         private readonly IRepositorioPosicion _repoPosicion;
         public IEnumerable<Posicion> posiciones { get;set;}
-        public IndexModel(IRepositorioPosicion _repoPosicion)
+        public IndexModel(IRepositorioPosicion repoPosicion)
         {
-            _repoPosicion = _repoPosicion;
+            _repoPosicion = repoPosicion;
         }
         public void OnGet()
         {
