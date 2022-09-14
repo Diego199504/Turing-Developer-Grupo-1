@@ -2,23 +2,23 @@
 @model Torneo.App.Frontend.Pages.Equipos.DetailsModel
 @{
 }
-<h1>Detalle del equipo</h1>
+<h1>Detalle del Equipo</h1>
 <table class = "table table- striped">
-<tr>
-    <th scope="col">Id</th>
-    </td>@Model.Equipo.Id</td>
-</tr>
-<tr>
-    <th> scope="col"> Nombre</th>
-    <td>@Model.Equipo.Nombre</td>
-</tr>
-<tr>
-    <th> scope="col"> Municipio</th>
-    <td>@Model.Equipo.Municipio.Nombre</td>
-</tr>
-<tr>
-    <th> scope="col"> Director Técnico</th>
-    <td>@Model.Equipo.DirectorTecnico.Nombre</td>
-</tr>
+    <tr>
+        <th scope="col">Id</th>
+        </td>@Model.Equipo.Id</td>
+    </tr>
+    <tr>
+        <th scope="col">Nombre</th>
+        <td>@Model.Equipo.Nombre</td>
+    </tr>
+    <tr>
+        <th scope="col"> Municipio</th>
+        <td>@Model.Equipo.Municipio.Nombre</td>
+    </tr>
+    <tr>
+        <th scope="col"> Director Técnico</th>
+        <td>@Model.Equipo.DirectorTecnico.Nombre</td>
+    </tr>
 </table>
 <a class="btn btn- primary" asp-page="./Index">Volver</a>
