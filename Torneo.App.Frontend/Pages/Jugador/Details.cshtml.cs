@@ -21,7 +21,7 @@ namespace Torneo.App.Frontend.Pages.Jugador
             return NotFound();
            }
            else{
-            return Pages();
+            return Page();
            }
         }
     }
