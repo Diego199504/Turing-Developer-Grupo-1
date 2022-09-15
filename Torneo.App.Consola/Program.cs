@@ -8,7 +8,7 @@ namespace Torneo.App.Consola
         private static IRepositorioMunicipio _repoMunicipio = new RepositorioMunicipio();
         private static IRepositorioDirectorTecnico _repoDirectorTecnico = new RepositorioDirectorTecnico();
         private static IRepositorioEquipo _repoEquipo = new RepositorioEquipo();
-        private static IRepositorioPosicion _repoPosiciones = new RepositorioPosicion();
+        private static IRepositorioPosicion _repoPosicion = new RepositorioPosicion();
         private static IRepositorioPartido _repoPartido = new RepositorioPartido();
         
         private static IRepositorioJugador _repoJugador = new RepositorioJugador();
@@ -62,7 +62,7 @@ namespace Torneo.App.Consola
                         GetAllEquipos();
                         break;
                     case 10:
-                        GetAllPosicion();
+                        GetAllPosiciones();
                         break;
                     case 11:
                         GetAllPartidos();
@@ -128,7 +128,7 @@ namespace Torneo.App.Consola
             {
                 Nombre = nombre,
             };
-            _repoPosiciones.AddPosicion(posicion);
+            _repoPosicion.AddPosicion(posicion);
         }
 
         private static void AddPartido()
@@ -197,9 +197,9 @@ namespace Torneo.App.Consola
                 "Documento: " + directorTecnico.Documento + " " + "Telefono: " + directorTecnico.Telefono);
             }
         }
-        private static void GetAllPosicion()
+        private static void GetAllPosiciones()
         {
-            foreach (var posicion in _repoPosiciones.GetAllPosicion())
+            foreach (var posicion in _repoPosicion.GetAllPosiciones())
             {
 
                 Console.WriteLine(" ID Posicion: " + posicion.Id + " " + "Nombre:" + posicion.Nombre);

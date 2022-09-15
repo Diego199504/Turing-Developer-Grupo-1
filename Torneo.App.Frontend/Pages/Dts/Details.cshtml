@@ -2,15 +2,15 @@
 @model Torneo.App.Frontend.Pages.Dts.DetailsModel
 @{
 }
-<h1>Detalle del director técnico</h1>
+<h1>Detalle del Director técnico</h1>
 <table class = "table table- striped">
-<tr>
-    <th scope="col">Id</th>
-    </td>@Model.DirectorTecnico.Id</td>
-</tr>
-<tr>
-    <th> scope="col"> Nombre</th>
-    <td>@Model.DirectorTecnico.Nombre</td>
-</tr>
+    <tr>
+        <th scope="col">Id</th>
+        <td>@Model.DirectorTecnico.Id</td>
+    </tr>
+    <tr>
+        <th scope="col">Nombre</th>
+        <td>@Model.DirectorTecnico.Nombre</td>
+    </tr>
 </table>
 <a class="btn btn- primary" asp-page="./Index">Volver</a>
