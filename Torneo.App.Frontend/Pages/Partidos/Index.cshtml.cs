@@ -9,7 +9,7 @@ namespace Torneo.App.Frontend.Pages.Partidos
     {
         private readonly IRepositorioPartido _repoPartido;
         public IEnumerable<Partido> partido {get; set;}
-        public IndexModel(RepositorioPartido repoPartido)
+        public IndexModel(IRepositorioPartido repoPartido)
         {
             _repoPartido = repoPartido;
         }
