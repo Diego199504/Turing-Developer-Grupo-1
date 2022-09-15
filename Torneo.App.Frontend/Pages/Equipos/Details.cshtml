@@ -2,13 +2,16 @@
 @model Torneo.App.Frontend.Pages.Equipos.DetailsModel
 @{
 }
+
 <h1>Detalle del Equipo</h1>
 <table class = "table table- striped">
+
     <tr>
         <th scope="col">Id</th>
         </td>@Model.Equipo.Id</td>
     </tr>
     <tr>
+
         <th scope="col">Nombre</th>
         <td>@Model.Equipo.Nombre</td>
     </tr>
@@ -18,6 +21,7 @@
     </tr>
     <tr>
         <th scope="col"> Director Técnico</th>
+
         <td>@Model.Equipo.DirectorTecnico.Nombre</td>
     </tr>
 </table>
