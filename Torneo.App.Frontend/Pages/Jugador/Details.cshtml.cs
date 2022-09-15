@@ -20,9 +20,11 @@ namespace Torneo.App.Frontend.Pages.Jugador
            if (jugador == null){
             return NotFound();
            }
-           else{
-            return Page();
-           }
+           else
+           {
+                return Page();
+
+            }
         }
     }
 }

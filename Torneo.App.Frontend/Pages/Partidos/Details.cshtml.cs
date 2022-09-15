@@ -4,11 +4,13 @@ using Torneo.App.Dominio;
 using Torneo.App.Persistencia;
 
 namespace Torneo.App.Frontend.Pages.Partido
+
 {
     public class DetailsModel : PageModel
     {
         private readonly IRepositorioPartido _repoPartido;
-        public Dominio.Partido partido { get; set; }
+        public Partido partido {get; set;}
+
         public DetailsModel(IRepositorioPartido repoPartido)
         {
             _repoPartido = repoPartido;
@@ -26,6 +28,7 @@ namespace Torneo.App.Frontend.Pages.Partido
             {
                 return Page();
             }
+
 
         }
     }

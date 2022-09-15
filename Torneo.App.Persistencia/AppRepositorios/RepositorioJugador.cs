@@ -33,7 +33,9 @@ namespace Torneo.App.Persistencia
                 .Include(e => e.Posicion)
                 .Include(e => e.Equipo)
                 .FirstOrDefault();
-                
+
+                //.ToList();
+
             return jugadorEncontrado;
 
         }

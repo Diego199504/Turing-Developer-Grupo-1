@@ -3,23 +3,20 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Torneo.App.Persistencia;
 using Torneo.App.Dominio;
 
-namespace Torneo.AppFrontend.Pages.Partido
+namespace Torneo.App.Frontend.Pages.Partidos
 {
-     public class IndexModel : PageModel
+    public class IndexModel : PageModel
     {
-         private readonly IRepositorioPartido _repoPartido;
-        public IEnumerable<Partido> partidos { get; set; }
-
-        public IndexModel(IRepositorioPartido repoPartido)
+        private readonly IRepositorioPartido _repoPartido;
+        public IEnumerable<Partido> partido {get; set;}
+        public IndexModel(RepositorioPartido repoPartido)
         {
             _repoPartido = repoPartido;
         }
-
         public void OnGet()
         {
-            partidos = _repoPartido.GetAllPartidos();
+            partido = _repoPartido.GetAllPartidos();
         }
-        
+    }
 
-    }    
 }
