@@ -1,20 +1,18 @@
-﻿using Torneo.App.Persistencia;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Torneo.App.Frontend.Pages.Partido;
+namespace Torneo.App.Frontend.Pages;
 
 public class IndexModel : PageModel
 {
-    private readonly IRepositorioPartido _repoPartido;
-    public IEnumerable<Dominio.Partido> Partido { get; set; }
+    private readonly ILogger<IndexModel> _logger;
 
-    public IndexModel(IRepositorioPartido repoPartido)
+    public IndexModel(ILogger<IndexModel> logger)
     {
-        _repoPartido = repoPartido;
+        _logger = logger;
     }
 
     public void OnGet()
     {
-        Partido = _repoPartido.GetAllPartidos();
+
     }
 }

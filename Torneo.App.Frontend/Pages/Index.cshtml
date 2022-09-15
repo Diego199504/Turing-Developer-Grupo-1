@@ -1,38 +1,11 @@
 ﻿@page
-@model Torneo.App.Frontend.Pages.Partido.IndexModel
+@model IndexModel
 @{
+    ViewData["Title"] = "Home page";
 }
-<h1> Listado de Partido</h1>
-<table class="table table-dark table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">FechaHora</th>
-      <th scope="col">VisitanteId</th>
-      <th scope="col">LocalId</th>
-      <th scope="col">MarcadorEquipoLocal</th>
-      <th scope="col">MarcadorEquipoVisitante</th>
-
-
-    </tr>
-  </thead>
-  <tbody>
-      @foreach (var Partido in Model.Partido )
-      {
-        <tr>
-            <th scope="row">@Partido.Id</th>
-            <td>
-                <a class="btn btn-primary" asp-page="./Details" asp-route-id="@Partido.Id">
-                Detalle
-                </a>
-            </td> 
-        </tr>
-      }  
-  </tbody>
-</table>
 
 <div class="text-center">
-    <h1 class="display-4">RETO TORNEO GRUPO 26 CICLO 3</h1>
-    <p>Clic en detalle <a href="https://drive.google.com/file/d/1bQfl15049da2f35VEBttuY0XUuI-nYBi/view?usp=sharing">Reto Torneo</a>.</p>
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
