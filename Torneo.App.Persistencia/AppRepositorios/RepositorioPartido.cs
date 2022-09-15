@@ -9,22 +9,35 @@ namespace Torneo.App.Persistencia
         {
             var equipoEncontradoLocal = _dataContext.Equipos.Find(idEquiposLocal);
             var equipoEncontradoVisitante = _dataContext.Equipos.Find(idEquiposVisitante);
+
             partido.Local = equipoEncontradoLocal;
             partido.Visitante = equipoEncontradoVisitante;
-            //partido.Visitante = equipoEncontradoVisitante;
+
             var partidoInsertado = _dataContext.Partidos.Add(partido);
+
             _dataContext.SaveChanges();
+
             return partidoInsertado.Entity;
         }
+
         public IEnumerable<Partido> GetAllPartidos()
         {
-           var partidos = _dataContext.Partidos
-                .Include(p => p.Local)
-                .Include(p => p.Visitante)
-               // .Include(p => p.Equipo.idEquiposVisitante)
-                .ToList();
+            var partidos = _dataContext.Partidos
+                 .Include(p => p.Local)
+                 .Include(p => p.Visitante)
+                 .ToList();
 
             return partidos;
+        }
+
+        public Partido GetPartido(int idPartido)
+        {
+            var partido = _dataContext.Partidos
+                 .Include(p => p.Local)
+                 .Include(p => p.Visitante)
+                 .FirstOrDefault();
+
+            return partido;
         }
     }
 }
