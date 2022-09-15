@@ -18,4 +18,5 @@ namespace Torneo.App.Frontend.Pages.Partidos
             partido = _repoPartido.GetAllPartidos();
         }
     }
+
 }

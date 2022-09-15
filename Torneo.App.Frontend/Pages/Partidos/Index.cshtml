@@ -1,5 +1,6 @@
 ﻿@page
 @model Torneo.App.Frontend.Pages.Partidos.IndexModel
+
 @{
 }
 <h1> Listado de Partido</h1>
@@ -15,13 +16,16 @@
     </tr>
   </thead>
   <tbody>
-      @foreach (var partido in Model.partido )
+      @foreach (var partido in Model.partidos )
+
       {
         <tr>
             <th scope="row">@partido.Id</th>
             <td>@partido.FechaHora</td>
+
             <td>@partido.Visitante.Nombre</td>
             <td>@partido.Local.Nombre</td>
+
             <td>@partido.MarcadorEquipoLocal</td>
             <td>@partido.MarcadorEquipoVisitante</td>
             <td>
@@ -33,3 +37,4 @@
       }  
   </tbody>
 </table>
+
