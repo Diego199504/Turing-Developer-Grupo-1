@@ -9,9 +9,9 @@
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Nombre</th>
-            <th scope="col">Posicion</th>
-            <th scope="col">Equipo</th>
-            <th scope="col">Accion</th>
+            <!-- <th scope="col">Posicion</th>
+            <th scope="col">Equipo</th> 
+            <th scope="col">Accion</th>-->
         </tr>
     </thead>
     <tbody>
@@ -20,16 +20,22 @@
             <tr>
                 <th scope="row">@jugador.Id</th>
                 <td>@jugador.Nombre</td>
-                <td>@jugador.Posicion.Nombre</td>
-                <td>@jugador.Equipo.Nombre</td>
                 <td>
-                    <a class="btn btn-info" asp-page="./Details" asp-route-id="@jugador.Id">
-                        <b>Detalle</b>
-                    </a>
-                    <a class="btn btn-secondary" asp-page="./Edit" asp-route-id="@jugador.Id">
-                        Editar
-                    </a>
-
+                    <button type="button" class="navbar-toggler btn btn-link" data-bs-toggle="collapse"
+                    data-bs-target="#MenuAcciones">
+                        <span class="navbar-toggler-icon"></span>
+                        Accion
+                    </button>
+                    <div id="MenuAcciones" class="collapse navbar-collapse">
+                        <ul class="navbar-nav ms-3">
+                            <li class="nav-item"><a class="nav-link text-dark" asp-page="./Details"
+                                asp-route-id="@jugador.Id">Detalles</a></li>
+                        </ul>
+                        <ul class="navbar-nav ms-3">
+                            <li class="nav-item"><a class="nav-link text-dark" asp-page="./Edit"
+                                asp-route-id="@jugador.Id">Editar</a></li>
+                        </ul>
+                    </div>
                 </td>
 
             </tr>
