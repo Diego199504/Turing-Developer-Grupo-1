@@ -12,7 +12,9 @@ namespace Torneo.App.Frontend.Pages.Partidos
         private readonly IRepositorioEquipo _repoEquipoVisitante;
 
         public Partido partido { get; set; }
-        public IEnumerable<Equipo> equipos { get; set; }
+        public IEnumerable<Equipo> local { get; set; }
+        public IEnumerable<Equipo> visitante { get; set; }
+
         public CreateModel(IRepositorioPartido repoPartido, IRepositorioEquipo repoEquipoLocal,
         IRepositorioEquipo repoEquipoVisitante)
         {
@@ -24,13 +26,13 @@ namespace Torneo.App.Frontend.Pages.Partidos
         public void OnGet()
         {
             partido = new Partido();
-            equipos = _repoEquipoLocal.GetAllEquipos();
-            equipos = _repoEquipoVisitante.GetAllEquipos();
+            local = _repoEquipoLocal.GetAllEquipos();
+            visitante = _repoEquipoVisitante.GetAllEquipos();
         }
 
-        public IActionResult OnPost(Partido partido, int idEquiposLocal, int idEquiposVisitante)
+        public IActionResult OnPost(Partido partido, int idEquipoLocal, int idEquipoVisitante)
         {
-            _repoPartido.AddPartido(partido, idEquiposLocal, idEquiposVisitante);
+            _repoPartido.AddPartido(partido, idEquipoLocal, idEquipoVisitante);
             return RedirectToPage("Index");
         }
     }
