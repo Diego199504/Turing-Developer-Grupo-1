@@ -21,19 +21,14 @@
                 <th scope="row">@jugador.Id</th>
                 <td>@jugador.Nombre</td>
                 <td>
-                    <button type="button" class="navbar-toggler btn btn-link" data-bs-toggle="collapse"
-                    data-bs-target="#MenuAcciones">
-                        <span class="navbar-toggler-icon"></span>
-                        Accion
-                    </button>
-                    <div id="MenuAcciones" class="collapse navbar-collapse">
-                        <ul class="navbar-nav ms-3">
-                            <li class="nav-item"><a class="nav-link text-dark" asp-page="./Details"
-                                asp-route-id="@jugador.Id">Detalles</a></li>
-                        </ul>
-                        <ul class="navbar-nav ms-3">
-                            <li class="nav-item"><a class="nav-link text-dark" asp-page="./Edit"
-                                asp-route-id="@jugador.Id">Editar</a></li>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                            Acciones
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" asp-page="./Details" asp-route-id="@jugador.Id">Detalles</a></li>
+                            <li><a class="dropdown-item" asp-page="./Edit" asp-route-id="@jugador.Id">Editar</a></li>
                         </ul>
                     </div>
                 </td>
