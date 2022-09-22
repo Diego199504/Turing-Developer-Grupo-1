@@ -10,6 +10,7 @@ namespace Torneo.App.Dominio
         [Display(Name = "Nombre del Municipio")]
         [Required(ErrorMessage = "El nombre es obligatorio")]
         public string Nombre { get; set; }
+        public List<Equipo> Equipos { get; set;}
         
     }
 }

@@ -2,6 +2,12 @@
 @model Torneo.App.Frontend.Pages.Dts.IndexModel
 @{
 }
+@if(Model.ErrorEliminar)
+{
+   <div class= "alert alert-danger" role="alert">
+     No se puede eliminar el Director técnico
+   </div>
+} 
 <a class="btn btn-primary" asp-page="./Create">Crear D.Tecnico</a>
 <h1> Listado de Director técnico</h1>
 
@@ -26,6 +32,17 @@
           <a class="btn btn-secondary" asp-page="./Edit" asp-route-id="@directorTecnico.Id">
             Editar
           </a>
+          @if (directorTecnico.Equipos.Count == 0)
+                {
+                  <form method="post" class="d-inline">
+                    <button asp-page-handler="Delete" asp-route-id="@directorTecnico.Id"
+                          onclick="return confirm(`¿Esta seguro de eliminar el Director Técnico ?`)"
+                          class= "btn btn-secondary">
+                          Delete
+                    </button>  
+                  </form>
+                }     
+          
         </td>
 
       </tr>

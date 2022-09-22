@@ -13,7 +13,10 @@ namespace Torneo.App.Persistencia
         }
         public IEnumerable<Posicion> GetAllPosiciones()
         {
-            return _dataContext.Posicion;
+            var posicion = _dataContext.Posicion
+                .Include(m => m.Jugadores)
+                .ToList();
+            return posicion;
         }
         public Posicion GetPosicion(int idPosicion)
 
@@ -31,5 +34,16 @@ namespace Torneo.App.Persistencia
             }
             return posicionEncontrada;
         }
+        public Posicion DeletePosicion(int  idPosicion)
+        {
+            var posicionEncontrado = _dataContext.Posicion.Find(idPosicion);
+            if(posicionEncontrado != null)
+            {
+                _dataContext.Posicion.Remove(posicionEncontrado);
+                _dataContext.SaveChanges();
+            }
+            return posicionEncontrado;
+        }   
+
     }
 }

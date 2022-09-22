@@ -9,6 +9,7 @@ namespace Torneo.App.Frontend.Pages.Dts
     {
         private readonly IRepositorioDirectorTecnico _repoDirectorTecnico;
         public IEnumerable<DirectorTecnico> directorTecnico { get; set;}
+        public bool ErrorEliminar { get; set;}
         public IndexModel(IRepositorioDirectorTecnico repoDirectorTecnico)
         {
              _repoDirectorTecnico = repoDirectorTecnico;
@@ -16,7 +17,21 @@ namespace Torneo.App.Frontend.Pages.Dts
         public void OnGet()
         {
             directorTecnico = _repoDirectorTecnico.GetAllDirectoresTecnicos();
-        
+            ErrorEliminar = false;
+        }
+        public IActionResult OnPostDelete(int id)
+        {
+            try{
+                _repoDirectorTecnico.DeleteDirectorTecnico(id);
+                directorTecnico = _repoDirectorTecnico.GetAllDirectoresTecnicos();
+                return Page();
+            }
+                catch (Exception ex)
+            {
+                directorTecnico = _repoDirectorTecnico.GetAllDirectoresTecnicos();
+                ErrorEliminar = true;
+                return Page();
+            }
         }
     }
 }   
