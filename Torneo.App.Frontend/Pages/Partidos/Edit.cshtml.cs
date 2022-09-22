@@ -30,9 +30,9 @@ namespace Torneo.App.Frontend.Pages.Partidos
         public IActionResult OnGet(int id)
         {
             partido = _repoPartido.GetPartido(id);
-            equipoLOption = new SelectList(_repoPartido.GetAllPartidos(), "Id", "Nombre");
+            equipoLOption = new SelectList(_repoEquipoLocal.GetAllEquipos(), "Id", "Nombre");
             equipoLSelected = partido.Local.Id;
-            equipoVOption = new SelectList(_repoPartido.GetAllPartidos(), "Id", "Nombre");
+            equipoVOption = new SelectList(_repoEquipoVisitante.GetAllEquipos(), "Id", "Nombre");
             equipoVSelected = partido.Visitante.Id;
             if (partido == null)
             {
