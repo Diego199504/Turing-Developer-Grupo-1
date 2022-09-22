@@ -2,3 +2,48 @@
 @model Torneo.App.Frontend.Pages.Partidos.EditModel
 @{
 }
+<h1>Editar Partido</h1>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="partido.Id"></label> 
+        <input asp-for="partido.Id" class="form-control">       
+       
+    </div>    
+
+    <div class="form-group">
+        <label asp-for="partido.FechaHora"></label> 
+        <input asp-for="partido.FechaHora" class="form-control">       
+       
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="equipoLSelected">Equipo Local</label>
+        <select asp-for="equipoLSelected" asp-items="@Model.equipoLOption" name="idEquipoLocal" class="form-control">
+        </select>
+    </div>
+
+    <div class="form-group">
+              
+        <label asp-for="partido.MarcadorEquipoLocal">Marcador del Equipo Local</label>
+        <input asp-for="partido.MarcadorEquipoLocal" class="form-control">
+       
+    </div>
+
+    <div class="form-group">
+        <label asp-for="equipoVSelected">Equipo Visitante</label>
+        <select asp-for="equipoVSelected" asp-items="@Model.equipoVOption" name="idEquipoVisitante" class="form-control">
+        </select>
+    </div>
+
+    <div class="form-group">
+              
+        <label asp-for="partido.MarcadorEquipoVisitante">Marcador del Equipo Visitante</label>
+        <input asp-for="partido.MarcadorEquipoVisitante" class="form-control">
+
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">Editar Partido</button>
+    <a class="btn btn-secondary ms-3" asp-page="./Index">Volver</a>
+    
+</form>
+
