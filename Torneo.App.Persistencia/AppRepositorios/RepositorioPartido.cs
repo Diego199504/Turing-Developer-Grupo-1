@@ -44,6 +44,7 @@ namespace Torneo.App.Persistencia
         }
         public Partido DeletePartido(int idPartido)
         {
+            //Delete Partido
             var partidoEcontrado = _dataContext.Partidos.Find(idPartido);
             if (partidoEcontrado != null)
             {
