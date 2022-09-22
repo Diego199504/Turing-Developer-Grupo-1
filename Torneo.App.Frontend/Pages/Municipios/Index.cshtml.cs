@@ -34,11 +34,5 @@ namespace Torneo.App.Frontend.Pages.Municipios
                 return Page();
             }
         }
-        public IActionResult OnPostDelete(int id)
-        {
-            municipios = _repoMunicipio.GetAllMunicipios();
-            _repoMunicipio.DeleteMunicipio(id);
-            return Page();
-        }
     }
 }
