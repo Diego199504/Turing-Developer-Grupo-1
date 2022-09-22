@@ -27,14 +27,14 @@ namespace Torneo.App.Persistencia
         }
 
 
-         public Partido GetPartido(int idPartido)
+        public Partido GetPartido(int idPartido)
         {
             var partidoEncontrado = _dataContext.Partidos
                 .Where(e => e.Id == idPartido)
                 .Include(e => e.Local)
                 .Include(e => e.Visitante)
                 .FirstOrDefault();
-                
+
             return partidoEncontrado;
 
         }
@@ -42,15 +42,15 @@ namespace Torneo.App.Persistencia
         {
 
             var partidoEncontrado = GetPartido(partido.Id);
-            
+
             var equipoEncontradoLocal = _dataContext.Equipos.Find(idEquiposLocal);
             var equipoEncontradoVisitante = _dataContext.Equipos.Find(idEquiposVisitante);
 
+            partidoEncontrado.FechaHora = partido.FechaHora;
             partido.Local = equipoEncontradoLocal;
+            partidoEncontrado.MarcadorEquipoLocal = partido.MarcadorEquipoLocal;
             partido.Visitante = equipoEncontradoVisitante;
-
-            //var partidoInsertado = _dataContext.Partidos.Add(partido);
-
+            partidoEncontrado.MarcadorEquipoVisitante = partido.MarcadorEquipoVisitante;
             _dataContext.SaveChanges();
 
             return partidoEncontrado;
