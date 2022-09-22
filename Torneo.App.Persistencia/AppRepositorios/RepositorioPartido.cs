@@ -55,5 +55,15 @@ namespace Torneo.App.Persistencia
 
             return partidoEncontrado;
         }
+        public Partido DeletePartido(int idPartido)
+        {
+            var partidoEncontrado = _dataContext.Partidos.Find(idPartido);
+            if (partidoEncontrado != null)
+            {
+                _dataContext.Partidos.Remove(partidoEncontrado);
+                _dataContext.SaveChanges();
+            }
+            return partidoEncontrado;
+        }
     }
 }

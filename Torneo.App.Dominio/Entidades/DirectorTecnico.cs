@@ -12,6 +12,8 @@ namespace Torneo.App.Dominio
         public int Documento { get; set; }
         [Display(Name = "Telefono del DT")]
         public int Telefono  { set; get; }
+        public List<Equipo> Equipos {get; set;}
+
 
     }
 }   

@@ -7,6 +7,7 @@ namespace Torneo.App.Persistencia
         public IEnumerable<Partido> GetAllPartidos();
         public Partido GetPartido(int idPartido);
         public Partido UpdatePartido(Partido partido, int idEquiposLocal, int idEquiposVisitante);
+        public Partido DeletePartido(int idPartido);
         
     }
 }
