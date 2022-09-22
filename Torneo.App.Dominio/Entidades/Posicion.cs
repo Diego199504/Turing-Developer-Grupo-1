@@ -8,5 +8,6 @@ namespace Torneo.App.Dominio
        public int Id { get; set;} 
        [Display(Name = "Nombre de la Posicion")]
        public string Nombre  { get; set;} 
+       public List<Jugadores> Jugadores {get;set;}
     }
 }
