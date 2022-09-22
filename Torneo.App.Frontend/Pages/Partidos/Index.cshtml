@@ -3,6 +3,7 @@
 
 @{
 }
+
 <a class="btn btn-primary" asp-page="./Create">Programar Partido</a>
 <h1> Listado de Partido</h1>
 <table class="table table-striped table-hover">
@@ -27,6 +28,29 @@
         <td>@partido.Visitante.Nombre</td>
         <td>@partido.Local.Nombre</td>
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+            <td>@partido.MarcadorEquipoLocal</td>
+            <td>@partido.MarcadorEquipoVisitante</td>
+            <td>
+                <a class="btn btn-primary" asp-page="./Details" asp-route-id="@partido.Id">
+                  Detalle
+                </a>
+                <a class="btn btn-secondary" asp-page="./Edit" asp-route-id="@partido.Id">
+                  Editar
+                </a>
+                <form method="post" class="d-inline">
+                    <button asp-page-handler="Delete" asp_route-id="@partido.Id"
+                      class="btn btn-primary">
+                          Eliminar
+                    </button>
+                </form>
+            </td> 
+        </tr>
+      }  
+=======
+=======
+>>>>>>> 4ff0c70a06fdd8af65ed39c75acf09cb19012894
         <td>@partido.MarcadorEquipoLocal</td>
         <td>@partido.MarcadorEquipoVisitante</td>
         <td>
@@ -45,5 +69,9 @@
         </td>
       </tr>
     }
+<<<<<<< HEAD
+>>>>>>> 4ff0c70a06fdd8af65ed39c75acf09cb19012894
+=======
+>>>>>>> 4ff0c70a06fdd8af65ed39c75acf09cb19012894
   </tbody>
 </table>
