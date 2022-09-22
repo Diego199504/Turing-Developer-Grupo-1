@@ -8,7 +8,7 @@ namespace Torneo.App.Frontend.Pages.Partidos
     public class IndexModel : PageModel
     {
         private readonly IRepositorioPartido _repoPartido;
-        public IEnumerable<Partido> partido {get; set;}
+        public IEnumerable<Partido> partido { get; set; }
         public IndexModel(IRepositorioPartido repoPartido)
         {
             _repoPartido = repoPartido;
@@ -17,6 +17,13 @@ namespace Torneo.App.Frontend.Pages.Partidos
         {
             partido = _repoPartido.GetAllPartidos();
         }
+        public IActionResult OnPostDelete(int id)
+        {
+            partido = _repoPartido.GetAllPartidos();
+            _repoPartido.DeletePartido(id);
+            return Page();
+        }
+
     }
 
 }

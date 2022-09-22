@@ -53,5 +53,15 @@ namespace Torneo.App.Persistencia
             return jugadorEncontrado;
         }
 
+        public Jugadores DeleteJugador(int idJugador){
+            var jugadorEcontrado = _dataContext.Jugadores.Find(idJugador);
+            if(jugadorEcontrado != null)
+            {
+                _dataContext.Jugadores.Remove(jugadorEcontrado);
+                _dataContext.SaveChanges();
+            }
+            return jugadorEcontrado;
+        }
+
     }
 }
