@@ -43,16 +43,16 @@
     </div>
 
     <div class="form-group">
+        <label asp-for="equipoVSelected">Equipo Visitante</label>
+        <select asp-for="equipoVSelected" asp-items="@Model.equipoVOption" name="idEquipoVisitante" class="form-control">
+        </select>
+    </div>
+
+    <div class="form-group">
               
         <label asp-for="partido.MarcadorEquipoLocal">Marcador del Equipo Local</label>
         <input asp-for="partido.MarcadorEquipoLocal" class="form-control">
        
-    </div>
-
-    <div class="form-group">
-        <label asp-for="equipoVSelected">Equipo Visitante</label>
-        <select asp-for="equipoVSelected" asp-items="@Model.equipoVOption" name="idEquipoVisitante" class="form-control">
-        </select>
     </div>
 
     <div class="form-group">
