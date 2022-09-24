@@ -1,8 +1,28 @@
 ﻿@page
 @model Torneo.App.Frontend.Pages.Equipos.EditModel
 @{
-}<h1>Editar equipo</h1>
+}
+<style>
+    *{box-sizing: border-box;}
+    .header{border:1px;
+            padding: 1px;}
+    .menu{width: 70%;
+          float: left;
+          padding: 1px;
+          border: 1px;
+          text-align:left;}
+    .main{width: 30%;
+          float: left;
+          padding: 1px;
+          border: 1px;
+          text-align: center;}
+</style>
+<div class="header">
+    <h1>Editar equipo</h1>
+</div>
+
 <form method="post">
+<div class="menu">
     <div class="form-group">
         <label asp-for="equipo.Id"></label>
         <input asp-for="equipo.Id" class="form-control" readonly>
@@ -21,6 +41,17 @@
         <select asp-for="DTSelected" asp-items="@Model.DTOptions" name="idDT" class="form-control">
         </select>
     </div>
-    <button type="submit" class="btn btn-primary btn-block">Editar equipo</button>
+    <button type="submit" class="btn btn-primary btn-block" style="margin:50px;">Editar equipo</button>
 </form>
 <a class="btn btn-secondary" asp-page="./Index">Volver</a>
+
+</div>
+</div>
+
+<div class="main"> 
+            <figure class="figure">
+            <img class="img-fluid rounded" src="~/imagen/equipos.jpg" width="200px" />
+            </figure>
+       
+    </div>
+</div>
