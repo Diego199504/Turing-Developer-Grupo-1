@@ -2,15 +2,44 @@
 @model Torneo.App.Frontend.Pages.Municipios.CreateModel
 @{
 }
-<h1>Nuevo municipio</h1>
+
+<style>
+    *{box-sizing: border-box;}
+    .header{border:1px;
+            padding: 1px;}
+    .menu{width: 70%;
+          float: left;
+          padding: 1px;
+          border: 1px;
+          text-align:left;}
+    .main{width: 30%;
+          float: left;
+          padding: 1px;
+          border: 1px;
+          text-align: center;}
+</style>
+<div class="header">
+    <h1>Nuevo municipio</h1>
+</div>
 <form method="post">
-    
+
+<div class="menu">    
     <div class="form-group">
         <label asp-for="municipio.Nombre"></label>
         <input  asp-for="municipio.Nombre" class="form-control">
         <span class="text-danger" asp-validation-for="municipio.Nombre"></span>
     </div>
     
-    <button type="submit" class="btn btn-primary btn-block">Crear municipio</button>
+    <button type="submit" class="btn btn-primary btn-block" style="margin:50px ;">Crear municipio</button>
 </form>
 <a class="btn btn-secondary" asp-page="./Index">Volver</a>
+</div>
+</div>
+
+<div class="main"> 
+            <figure class="figure">
+            <img class="img-fluid rounded" src="~/imagen/ubicacion.jpg" width="200px" />
+            </figure>
+       
+    </div>
+</div>

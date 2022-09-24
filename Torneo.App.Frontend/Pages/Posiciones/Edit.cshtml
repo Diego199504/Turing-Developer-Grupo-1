@@ -1,8 +1,30 @@
 ﻿@page
 @model Torneo.App.Frontend.Pages.Posiciones.EditModel
 @{
-}<h1>Editar Posicion</h1>
+}
+
+<style>
+    *{box-sizing: border-box;}
+    .header{border:1px;
+            padding: 1px;}
+    .menu{width: 70%;
+          float: left;
+          padding: 1px;
+          border: 1px;
+          text-align:left;}
+    .main{width: 30%;
+          float: left;
+          padding: 1px;
+          border: 1px;
+          text-align: center;}
+</style>
+<div class="header">
+    <h1>Editar Posicion</h1>
+</div>
+
 <form method="post">
+
+<div class="menu">    
     <div class="form-group">
         <label asp-for="posicion.Id"></label>
         <input asp-for="posicion.Id" class="form-control" readonly>
@@ -11,6 +33,17 @@
         <label asp-for="posicion.Nombre"></label>
         <input asp-for="posicion.Nombre" class="form-control">
     </div>
-    <button type="submit" class="btn btn-primary btn-block">Editar Posicion</button>
+    <button type="submit" class="btn btn-primary btn-block" style="margin:50px;">Editar Posicion</button>
 </form>
 <a class="btn btn-secondary" asp-page="./Index">Volver</a>
+
+</div>
+</div>
+
+<div class="main"> 
+            <figure class="figure">
+            <img class="img-fluid rounded" src="~/imagen/posiciones.jpg" width="300px" />
+            </figure>
+       
+    </div>
+</div>
